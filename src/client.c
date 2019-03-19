@@ -377,7 +377,7 @@ send_sourcetable (connection_t *con) {
 
 	sock_write_line (con->sock, "SOURCETABLE 200 OK");
 	sock_write_line (con->sock, "Server: NTRIP NtripCaster %s/%s", info.version, info.ntrip_version);
-//	sock_write_line (con->sock, "Date: %s %s", time, info.timezone);
+	sock_write_line (con->sock, "Date: %s %s", time, info.timezone);
 	ifp = fopen("../conf/sourcetable.dat","r");
 	if (ifp != NULL) {
 		fseek(ifp, 0, SEEK_END);
